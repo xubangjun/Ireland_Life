@@ -1,5 +1,22 @@
 import React from "react";
-export const SearchPanel = ({ users, param, setParam }) => {
+export interface User{
+  id: string;
+  name: string;
+  email: string;
+  title: string;
+  organization: string;
+}
+
+interface SearchPaneProps{
+  users: User[],
+  param: {
+    name: string;
+    personId: string;
+  },
+  setParam: (param: SearchPaneProps['param'])=>void;
+}
+
+export const SearchPanel = ({ users, param, setParam }: SearchPaneProps) => {
   // setParam(Object.assign({}, param, {name: evt.target.value}))
   return (
     <form action="">
@@ -15,11 +32,11 @@ export const SearchPanel = ({ users, param, setParam }) => {
           }
         ></input>
         <select
-          value={param.persionId}
+          value={param.personId}
           onChange={(evt) =>
             setParam({
               ...param,
-              persionId: evt.target.value,
+              personId: evt.target.value,
             })
           }
         >
