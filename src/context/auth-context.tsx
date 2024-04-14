@@ -10,11 +10,13 @@ const AuthContext = React.createContext<{
     logout: () => Promise<void>, 
 } | undefined> (undefined)
 
+AuthContext.displayName = 'AuthContext'
+
 interface AuthForm{
     username: string,
     password: string
 }
-AuthContext.displayName = 'AuthContext'
+
 
 export const AuthProvider=({children}:{children: ReactNode})=>{
     const[user, setUser] = useState<User | null>(null)
@@ -23,9 +25,10 @@ export const AuthProvider=({children}:{children: ReactNode})=>{
     const register =(form: AuthForm)=>auth.register(form).then(user=>setUser(user))
     const logout =()=>auth.logout().then(()=>setUser(null))
 
-    return <AuthContext.Provider value={{user, login, register, logout}}/>
+    return <AuthContext.Provider children={children} value={{user, login, register, logout}}/>
 }
 
+//自定义的hook
 export const useAuth = () => {
     const context = React.useContext(AuthContext)
     if(!context){

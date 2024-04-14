@@ -1,17 +1,17 @@
 //在真实环境中，如果使用firebase 这种第三方auth环境，本文件不需要开发
 import { User } from "screens/project-list/search-panel"
 
-const localStorage = '__auth_provider_token__'
+const localStorageKey = '__auth_provider_token__'
 const apiUrl = process.env.REACT_APP_API_URL;
-export const getToken=()=> window.localStorage.getItem(localStorage)
+export const getToken=()=> window.localStorage.getItem(localStorageKey)
 
 export const handleUserResponse = ({user}: {user: User}) =>{
-    window.localStorage.setItem(localStorage, user.token || '')
+    window.localStorage.setItem(localStorageKey, user.token || '')
     return user
 }
 
 export const login =(data : {username: string, password: string}) =>{
-    return fetch(`${apiUrl}/login`, {
+    return fetch(`${apiUrl}/hello/helloword`, {
         method: 'POST',
         headers:{
             'Content-Type': 'application/json',
@@ -46,5 +46,5 @@ export const register=(data : {username: string, password: string}) =>{
     )
 }
 
-export const logout =async ()=> window.localStorage.removeItem(localStorage)
+export const logout =async ()=> window.localStorage.removeItem(localStorageKey)
 
