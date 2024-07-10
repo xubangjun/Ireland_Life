@@ -9,7 +9,7 @@ export const cleanObject = (object: object) => {
     //@ts-ignore
     const value = result[key];
     if (isFalsy(value)) {
-          //@ts-ignore
+      //@ts-ignore
       delete result[key];
     }
   });
@@ -17,20 +17,20 @@ export const cleanObject = (object: object) => {
   return result;
 };
 
-export const useMount = (callback: ()=> void) => {
+export const useMount = (callback: () => void) => {
   useEffect(() => {
     callback();
   }, []);
 };
 //后面用范型§
 export const useDebounce = (value: unknown, delay?: number): any => {
-  const [debouncedValue, setDebouncedValue] = useState(value)
-// 每次在value 变化以后设置一个定时器
-  useEffect(() =>{
-    const timeout = setTimeout(() =>setDebouncedValue(value), delay)
+  const [debouncedValue, setDebouncedValue] = useState(value);
+  // 每次在value 变化以后设置一个定时器
+  useEffect(() => {
+    const timeout = setTimeout(() => setDebouncedValue(value), delay);
     // 每次在上一个useEffect 处理完以后再运行
-    return ()=> clearTimeout(timeout)
-  }, [value, delay])
+    return () => clearTimeout(timeout);
+  }, [value, delay]);
 
-  return debouncedValue
-}
+  return debouncedValue;
+};

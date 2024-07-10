@@ -1,5 +1,5 @@
 import React from "react";
-export interface User{
+export interface User {
   id: string;
   name: string;
   email: string;
@@ -8,13 +8,13 @@ export interface User{
   token: string;
 }
 
-interface SearchPaneProps{
-  users: User[],
+interface SearchPaneProps {
+  users: User[];
   param: {
     name: string;
     personId: string;
-  },
-  setParam: (param: SearchPaneProps['param'])=>void;
+  };
+  setParam: (param: SearchPaneProps["param"]) => void;
 }
 
 export const SearchPanel = ({ users, param, setParam }: SearchPaneProps) => {

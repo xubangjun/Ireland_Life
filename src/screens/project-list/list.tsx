@@ -10,18 +10,18 @@ interface Project {
 }
 
 interface ListProps {
-  list: Project[],
-  users: User[]
+  list: Project[];
+  users: User[];
 }
 export const List = ({ list, users }: ListProps) => {
   return (
     <table>
-     <thead>
+      <thead>
         <tr>
           <th>名称</th>
           <th>负责人</th>
         </tr>
-        </thead>
+      </thead>
       <tbody>
         {list.map((project) => (
           <tr key={project.id}>
