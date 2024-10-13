@@ -22,7 +22,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "prettier": "prettier --write \"**/*.tsx\""
   },
   "eslintConfig": {
     "extends": [

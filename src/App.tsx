@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import "./App.css";
-// import { ProjectListScreen } from "screens/project-list";
+import { ProjectListScreen } from "screens/project-list";
 import { LoginScreen } from "screens/login";
 function App() {
   useEffect(() => {
@@ -17,8 +17,8 @@ function App() {
 
   return (
     <div className="App">
-      {/* <ProjectListScreen></ProjectListScreen> */}
-      <LoginScreen />
+      <ProjectListScreen></ProjectListScreen>
+      {/* <LoginScreen /> */}
     </div>
   );
 }
