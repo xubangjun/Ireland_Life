@@ -23,7 +23,7 @@ export const useMount = (callback: () => void) => {
   }, []);
 };
 //后面用范型§
-export const useDebounce = (value: unknown, delay?: number): any => {
+export const useDebounce = (value: any, delay?: number): any => {
   const [debouncedValue, setDebouncedValue] = useState(value);
   // 每次在value 变化以后设置一个定时器
   useEffect(() => {

@@ -20,13 +20,13 @@ export const ProjectListScreen = () => {
   console.log(users);
   useEffect(() => {
     fetch(
-      `${apiUrl}/project/getProjects  ?${qs.stringify(cleanObject(debouncedParam))}`,
+      `${apiUrl}/project/getProjects?${qs.stringify(cleanObject(debouncedParam))}`,
     ).then(async (response) => {
       if (response.ok) {
         setList(await response.json());
       }
     });
-  }, [debouncedParam]);
+  }, [debouncedParam, param]);
 
   useMount(() => {
     fetch(`${apiUrl}/user/getUsers`).then(async (response) => {
