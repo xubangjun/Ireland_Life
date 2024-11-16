@@ -16,12 +16,14 @@ export const cleanObject = (object: object) => {
 
   return result;
 };
-
+// eslint-disable-next-line
 export const useMount = (callback: () => void) => {
   useEffect(() => {
     callback();
+    // eslint-disable-next-line
   }, []);
 };
+
 //后面用范型§
 export const useDebounce = (value: any, delay?: number): any => {
   const [debouncedValue, setDebouncedValue] = useState(value);
