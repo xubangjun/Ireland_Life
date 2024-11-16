@@ -31,7 +31,9 @@
     "eject": "react-scripts eject",
     "lint-staged": "lint-staged",
     "preci-install": "npm cache clean --force",
-    "ci-install": "npm install"
+    "ci-install": "npm install",
+    "format": "prettier --write .",
+    "format-check": "prettier --check ."
   },
   "eslintConfig": {
     "extends": [
