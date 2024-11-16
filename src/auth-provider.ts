@@ -14,7 +14,7 @@ export const login = (data: { username: string; password: string }) => {
   return fetch(`${apiUrl}/login`, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json",
+      "Content-Type": "appl ication/json",
     },
     body: JSON.stringify(data),
   }).then(async (response) => {

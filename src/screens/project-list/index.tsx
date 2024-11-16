@@ -7,10 +7,7 @@ import * as qs from "qs";
 // eslint-disable-next-line
 const apiUrl = process.env.REACT_APP_API_URL;
 export const ProjectListScreen = () => {
-  const [param, setParam] = useState({
-    name: "",
-    personId: "",
-  });
+  const [param, setParam] = useState({name: "",personId: "",});
 
   const debouncedParam = useDebounce(param, 2000);
   const [list, setList] = useState([]);

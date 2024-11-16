@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import React from "react";
 export interface User {
   id: string;
@@ -21,7 +22,7 @@ export const SearchPanel = ({ users, param, setParam }: SearchPaneProps) => {
   // setParam(Object.assign({}, param, {name: evt.target.value}))
   return (
     <form action="">
-      <div>
+      <Box>
         <input
           type="text"
           value={param.name}
@@ -48,7 +49,7 @@ export const SearchPanel = ({ users, param, setParam }: SearchPaneProps) => {
             </option>
           ))}
         </select>
-      </div>
+      </Box>
     </form>
   );
 };
